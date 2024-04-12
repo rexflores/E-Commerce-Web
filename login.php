@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Login</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('logo/banner.png'); /* Specify the path to your background image */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            backdrop-filter: blur(10px); /* Add a blur effect to the background */
+        }
+
+        .container {
+            width: 50%;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity of the background color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #333;
+        }
+
+        .viewrec {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .viewrec:hover {
+            text-decoration: underline;
+        }
+
+        .contents {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table td {
+            padding: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Login</h1>
+        </div>
+
+        <div class="contents">
+            <form action="check.php" method="post" onsubmit="return validatePassword()">
+                <table>
+                    <tr>
+                        <td>Username</td>
+                        <td><input type="text" name="uname" placeholder="Enter your Username" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" name="pword" id="password" placeholder="Enter your Password" required></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="submit" name="login" value="Login"></td>
+                    </tr>
+                </table>
+            </form>
+            <p>Don't have an account? <a href="signup.php">Click Here</a></p>
+        </div>
+    </div>
+</body>
+</html>
